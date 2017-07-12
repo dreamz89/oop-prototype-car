@@ -63,24 +63,28 @@ success()
 
 // // normal case: Driving to destination while car running
 console.log('Driving to destination while car running')
+honda.start()
 honda.driveTo('Vienna')
 assert.strictEqual(honda.running, true, 'Should return true if car is running')
 success()
 
 // // normal case: Driving to destination while car not running
 console.log('Driving to destination while car not running')
+honda.off()
 honda.driveTo('Vienna')
 assert.strictEqual(honda.running, false, 'Should return false if car is not running')
 success()
 
 // // normal case: Parking while car running
 console.log('Parking while car running')
+honda.start()
 honda.park()
 assert.strictEqual(honda.running, true, 'Should return false if car is running')
 success()
 
 // // normal case: Parking while car not running
 console.log('Parking while car not running')
+honda.off()
 honda.park()
 assert.strictEqual(honda.running, false, 'Should return true if car is not running')
 success()
